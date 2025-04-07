@@ -1,0 +1,25 @@
+# Node modules (les dépendances)
+Serveur/node_modules/
+
+# Dossier de build (si tu utilises des builds)
+Serveur/dist/
+
+# Les fichiers de logs
+Serveur/*.log
+
+# Fichiers d'environnement
+Serveur/.env
+
+# Dossiers de tests temporaires
+coverage/
+
+# Fichiers IDE (vscode, etc.)
+Serveur/.vscode/
+
+# Fichiers système d'exploitation
+.DS_Store
+Thumbs.db
+
+# Si tu utilises un dossier "client" à l'avenir, tu peux aussi ignorer des fichiers spécifiques dans ce dossier.
+client/node_modules/
+client/dist/
