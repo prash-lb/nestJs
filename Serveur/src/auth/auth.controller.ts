@@ -9,15 +9,15 @@ import { ApiResponse, ApiTags } from '@nestjs/swagger';
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
   @Post('register')
-  @ApiResponse({ status: 200, description: 'sign up sucess'})
+  @ApiResponse({ status: 201, description: 'sign up sucess'})
   @ApiResponse({ status: 409, description: 'The username is already used'})
   async registerUser(@Body() registerDto: RegisterDto) {
     return this.authService.createUser(registerDto);
   }
 
   @Post('login')
-  @ApiResponse({ status: 200, description: 'login sucess'})
-  @ApiResponse({ status: 403, description: 'Forbidden.'})
+  @ApiResponse({ status: 201, description: 'login sucess'})
+  @ApiResponse({ status: 401, description: 'Unauthorized'})
   async loginUser(@Body() loginDto: LoginDto) {
     return this.authService.loginUser(loginDto);
   }
