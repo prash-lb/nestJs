@@ -6,6 +6,8 @@ import { UserModule } from './user/user.module';
 import { User } from './user/entities/user.entity';
 import { AuthModule } from './auth/auth.module';
 import { MoviesModule } from './movies/movies.module';
+import { ReservationModule } from './reservation/reservation.module';
+import { Reservation } from './reservation/entities/reservation.entity';
 
 @Module({
   imports: [
@@ -15,7 +17,7 @@ import { MoviesModule } from './movies/movies.module';
       port: 5432,
       password: 'prashath',
       username: 'postgres',
-      entities: [User],
+      entities: [User,Reservation],
       database: 'postgres',
       synchronize: true,
       logging: true,
@@ -23,6 +25,7 @@ import { MoviesModule } from './movies/movies.module';
     UserModule,
     AuthModule,
     MoviesModule,
+    ReservationModule,
   ],
   controllers: [AppController],
   providers: [AppService],

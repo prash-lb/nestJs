@@ -26,7 +26,7 @@ export class AuthService {
   }> {
     try {
       const response = await this.UserService.createUser(register);
-      const payload = { sub: response.id, username: response.username };
+      const payload = { sub: response.id, username: response.email };
       const token = this.jwtService.sign(payload);
       return {
         response: {
@@ -60,7 +60,7 @@ export class AuthService {
     if (!match) {
       throw new UnauthorizedException('Identifiant incorrect');
     }
-    const payload = { sub: user.id, username: user.username };
+    const payload = { sub: user.id, username: user.email };
     const token = this.jwtService.sign(payload);
 
     return {

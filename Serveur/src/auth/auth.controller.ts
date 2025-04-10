@@ -9,15 +9,17 @@ import { ApiResponse, ApiTags } from '@nestjs/swagger';
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
   @Post('register')
-  @ApiResponse({ status: 201, description: 'sign up sucess'})
-  @ApiResponse({ status: 409, description: 'The username is already used'})
+  @ApiResponse({ status: 201, description: 'Inscription réussie' })
+  @ApiResponse({ status: 409, description: 'Le nom utilisateur est déjà pris' })
+  @ApiResponse({ status: 500, description: 'Erreur serveur' })
   async registerUser(@Body() registerDto: RegisterDto) {
     return this.authService.createUser(registerDto);
   }
 
   @Post('login')
-  @ApiResponse({ status: 201, description: 'login sucess'})
-  @ApiResponse({ status: 401, description: 'Unauthorized'})
+  @ApiResponse({ status: 201, description: 'Connexion réussie' })
+  @ApiResponse({ status: 401, description: 'Identifiants incorrects' })
+  @ApiResponse({ status: 500, description: 'Erreur serveur' })
   async loginUser(@Body() loginDto: LoginDto) {
     return this.authService.loginUser(loginDto);
   }
