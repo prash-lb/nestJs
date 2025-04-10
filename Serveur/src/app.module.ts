@@ -13,14 +13,18 @@ import { Reservation } from './reservation/entities/reservation.entity';
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
+      host: 'dpg-cvrr75ggjchc73bgoj60-a.frankfurt-postgres.render.com',
       port: 5432,
-      password: 'prashath',
-      username: 'postgres',
+      password: 'Whs2xgYs2H9SfU01ko3I1p4QD2qv2oNX',
+      username: 'cinema_postgres_user',
       entities: [User,Reservation],
-      database: 'postgres',
+      database: 'cinema_postgres',
       synchronize: true,
       logging: true,
+      extra: {
+        ssl: {
+          rejectUnauthorized: false,
+        },}
     }),
     UserModule,
     AuthModule,

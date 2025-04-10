@@ -8,6 +8,7 @@ const API = 'https://api.themoviedb.org/3/';
 const ListAPI = 'discover/movie';
 const SEARCH_PERSON_APi = 'search/person';
 
+//le id des différents genres
 const genreDico = {
   Action: 28,
   Adventure: 12,
@@ -32,7 +33,7 @@ const genreDico = {
 @Injectable()
 export class MoviesService {
   constructor(private readonly httpService: HttpService) {}
-
+  //on cherche ici led id des personne donner dans with_crew pour apres donner cette info a l'appel de l'api pour qu'il nous renvoi les film filtre avec ces id
   private fetchIdPerson(name: string) {
     const headers = {
       Authorization: `Bearer ${process.env.JETON_READING_API}`,
