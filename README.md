@@ -169,3 +169,17 @@ npm run test
 ##Conclusion
 
 Ce projet vous permet de gérer les réservations de films pour un utilisateur donné, de vérifier les chevauchements et de s'assurer que la durée de chaque réservation est correcte (2 heures). De plus, il permet de rechercher des films en utilisant plusieurs critères (genre, acteur/réalisateur, année de sortie) et de tester différentes combinaisons de filtres grâce à l'endpoint "swapper".
+
+##Annexe
+Voici les différents liens que j'ai utilisés pour réaliser ce proje
+
+[https://docs.nestjs.com/techniques/validation]
+[https://docs.nestjs.com/controllers]
+[https://medium.com/simform-engineering/nestjs-and-postgresql-a-crud-tutorial-32aa78778752]
+[https://docs.nestjs.com/techniques/database]
+[https://docs.nestjs.com/security/encryption-and-hashing]
+[https://docs.nestjs.com/guards]
+[https://docs.nestjs.com/openapi/introduction]
+[https://docs.nestjs.com/openapi/operations]
+[https://medium.com/@camillefauchier/implementing-authentication-in-nestjs-using-passport-and-jwt-5a565aa521de]
+
